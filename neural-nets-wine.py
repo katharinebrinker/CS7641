@@ -32,12 +32,12 @@ TRAINING_ITERATIONS = 1000
 
 
 def initialize_train_instances():
-    """Read the abalone.txt CSV data into a list of instances."""
+    """Read the wine CSV data into a list of instances."""
     instances = []
 
-    # Read in the abalone.txt CSV file
-    with open(INPUT_FILE, "r") as abalone:
-        reader = csv.reader(abalone)
+    # Read in the CSV file
+    with open(INPUT_FILE, "r") as wine_data:
+        reader = csv.reader(wine_data)
         next(reader) # skip header
 
         for row in reader:
@@ -48,12 +48,12 @@ def initialize_train_instances():
     return instances
 
 def initialize_test_instances():
-    """Read the abalone.txt CSV data into a list of instances."""
+    """Read the CSV data into a list of instances."""
     instances = []
 
-    # Read in the abalone.txt CSV file
-    with open(INPUT_FILE_TEST, "r") as abalone:
-        reader = csv.reader(abalone)
+    # Read in the CSV file
+    with open(INPUT_FILE_TEST, "r") as wine_test_data:
+        reader = csv.reader(wine_test_data)
         next(reader) # skip header
 
         for row in reader:
@@ -91,7 +91,7 @@ def train(oa, network, oaName, instances, measure, test_instances):
 
 
 def main():
-    """Run algorithms on the abalone dataset."""
+    """Run algorithms on the dataset."""
     instances = initialize_train_instances()
     test_instances = initialize_test_instances()
     factory = BackPropagationNetworkFactory()
